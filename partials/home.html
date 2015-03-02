@@ -1,0 +1,210 @@
+<!-- Main Header -->
+<div class="row" data-ng-controller="homeCtrl">
+  <div class="row page-header">
+	<header class="navbar navbar-fixed-top">
+		<div class="row">
+			<div class="col-sm-6">
+    			<p class="mainTitle">
+    				<h4>
+    					Portfolio 1 | 
+    					<small>Sales Management Web App. {{message}}</small>
+    				</h4>
+    			</p>
+    		</div>
+    		<div class="col-sm-6">
+    			<p class="user-utilities">
+    				<span><span class="glyphicon glyphicon-user"> </span> {{user.username}} </span>
+    				<span><a href="" data-ng-click="logout()">Logout</a></span>
+    				<!-- main view  /main/layout.html -->
+					<div></div>
+    			</p>
+    		</div>
+		</div>
+	</header>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 col-md-2 left-sidebar">
+	    <ul class="nav nav-pills nav-stacked">
+		   <li class="active"><a href="#">Home</a></li>
+		   <li><a href="#" id="pie-Chart">Total Sales Values Per Salesman</a></li>
+		   <li><a href="#" id="bar-Chart">Total Sales Per Month</a></li>
+		   <li><a href="#" id="top-sales">Top 5 Sales Orders in Amounts</a></li>
+		   <li><a href="#" id="top-salesmen">Top 5 Salesmen in Last 3 Months</a></li>
+		   <li><a href="#">Utilities Links</a></li>
+		   
+		   <li><a href="#">Total Sales Values for Salesmen</a></li>
+		   <li><a href="#">Total Sales Per Month</a></li>
+	    </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 right-container">
+		<h1 class="title">Sales Management Dashboard</h1>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="panel panel-pie">
+    				<div class="panel-heading">
+    					<button type="button" class="close closepanel" aria-hidden="true">&times;</button>
+        				<div class="panel-title-text">Total Sales Values Per Salesman</div>
+        			</div>
+        			<div class="panel-body">
+        				<highchart id="chart1" config="chartConfig"></highchart>
+        			</div>
+    			</div>
+			</div>
+			<div class="col-sm-6">	
+				<div class="panel panel-bar">
+    				<div class="panel-heading">
+    					<button type="button" class="close closepanel" aria-hidden="true">&times;</button>
+        				<div class="panel-title-text">Total Sales Per Month</div>
+        			</div>
+        			<div class="panel-body">
+        				<highchart id="chart2" config="chartConfig2"></highchart>
+        			</div>
+    			</div>
+			</div>
+		</div>
+    	<div class="row">
+			<div class="col-sm-6">
+				<div class="panel panel-salesmen">
+    				<div class="panel-heading">
+    					<button type="button" class="close closepanel" aria-hidden="true">&times;</button>
+        				<div class="panel-title-text">Top 5 Salesmen In the Last 3 Months</div>
+        			</div>
+        			<div class="table-responsive">
+	        			<table class="table table-hover">
+	        				<thead>
+						      <tr>
+							      	<th>Order Numbers</th>
+							      	<th>Usernames</th>
+							      	<th>Values</th>
+							      	<th>Quantities</th>
+						      </tr>
+						    </thead>
+					        <tbody>
+						      <tr>
+							      	<td>Product A</td>
+							      	<td>200</td>
+							      	<td>Product A</td>
+							      	<td>200</td>
+						      </tr>
+						    </tbody>
+					    </table>
+				    </div>
+    			</div>
+			</div>
+			<div class="col-sm-6">	
+				<div class="panel panel-sales-order">
+    				<div class="panel-heading">
+    					<button type="button" class="close closepanel" aria-hidden="true">&times;</button>
+        				<div class="panel-title-text">Top 5 Sales Orders in Amount</div>
+        			</div>
+        			<div class="table-responsive">
+	        			<table class="table table-hover">
+	        				<thead>
+						      <tr>
+							      	<th>Order Numbers</th>
+							      	<th>Usernames</th>
+							      	<th>Values</th>
+							      	<th>Quantities</th>
+						      </tr>
+				            </thead>
+				            <tbody>
+						      <tr>
+							      	<td>Product A</td>
+							      	<td>200</td>
+							      	<td>Product A</td>
+							      	<td>200</td>
+						      </tr>
+						     </tbody>
+					    </table>
+        			</div>
+    			</div>
+    		</div>
+		</div>
+		<div class="row footer-container">
+			<div class="col-sm-12 col-md-12">
+				<!-- Main Footer -->
+				<footer>
+			    	<a data-toggle="modal" href="partials/privacy.html" data-target="#dataModal">Privacy Policy</a>
+			    	<a data-toggle="modal" href="partials/tos.html" data-target="#tosModal">Terms of Use</a>
+					<a data-toggle="modal" href="partials/support.html" data-target="#supportModal">Support</a>
+			    </footer>
+    		</div>
+		</div>
+		<!-- Modal Pop----------------------------- Modal Pop-up ------- -->
+	    
+	    <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" 
+		   aria-labelledby="myModalLabel" aria-hidden="true" data-ng-hide="modalClosed">
+		   <div class="modal-dialog">
+		      <div class="modal-content">
+		         
+		      </div><!-- /.modal-content -->
+		   </div><!-- /.modal -->
+		</div>
+		<!-- Terms Of Use Modal -->
+		<div class="modal fade" id="tosModal" tabindex="-1" role="dialog" 
+		   aria-labelledby="myModalLabel" aria-hidden="true" data-ng-hide="modalClosed">
+		   <div class="modal-dialog">
+		      <div class="modal-content">
+		         
+		      </div><!-- /.modal-content -->
+		   </div><!-- /.modal -->
+		</div>
+		<!-- Terms Of Use Modal -->
+		<div class="modal fade" id="supportModal" tabindex="-1" role="dialog" 
+		   aria-labelledby="myModalLabel" aria-hidden="true" data-ng-hide="modalClosed">
+		   <div class="modal-dialog">
+		      <div class="modal-content">
+		         
+		      </div><!-- /.modal-content -->
+		   </div><!-- /.modal -->
+		</div>
+    </div>
+  </div>
+</div>
+<!-- Some functionalities on the panels in home -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		// Initializing Movable or Draggable effect on panels
+		$(".panel-pie, .panel-salesmen, .panel-bar, .panel-sales-order").draggable({
+			containment:".right-container",
+			scroll: false,
+			revert: "invalid",
+			opacity: 0.8,
+			helper: "original",
+			handle: ".panel-heading"
+		}).css("z-index", "1000");
+		
+		// Initializing Resizable effect on panels
+		/*
+		$(".panel-pie, .panel-salesmen, .panel-bar, .panel-sales-order").resizable({ 
+					ghost: true,
+					animate: true,
+				});*/
+		
+		$(".col-sm-6").droppable();
+		
+		// Close the Panels
+		$(".closepanel").on('click', function(){
+			$(this).parent('.panel-heading')
+				   .parent('.panel')
+				   .fadeOut('slow');
+		});
+		//Open back the Panels
+		$("#pie-Chart").on('click',function(e){
+			e.preventDefault();
+			$('.panel-pie').fadeIn('slow');
+		});
+		$("#bar-Chart").on('click',function(e){
+			e.preventDefault();
+			$('.panel-bar').fadeIn('slow');
+		});
+		$("#top-salesmen").on('click',function(e){
+			e.preventDefault();
+			$('.panel-salesmen').fadeIn('slow');
+		});
+		$("#top-sales").on('click',function(e){
+			e.preventDefault();
+			$('.panel-sales-order').fadeIn('slow');
+		});
+	});
+</script>

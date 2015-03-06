@@ -50,27 +50,6 @@ salesApp.factory('Salesmen', function($resource){
 		query:{method:'GET', isArray:true}
 	});
 });
-/*
-// SessionServices
-salesApp.factory('SessionIdService', function() {
-    var sessionID = '';
-    return {
-        getSessionId: function() {
-            if(sessionID=='' || sessionID==null)
-                sessionID = localStorage.getItem("SessionId");
-
-            console.log("Get sessionId => " + sessionID); 
-
-            return sessionID;
-        },
-        setSessionId: function(sessId) {
-            console.log("Set sessionId=" + sessId);
-            localStorage.setItem("SessionId", sessId);
-            sessionID = sessId;
-            return;
-        }
-    };
-});*/
 
 // Important Controllers
 salesApp.controller('salesMainCtrl', ['$scope', 'Salesmen', function($scope, Salesmen){
